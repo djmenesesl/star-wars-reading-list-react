@@ -1,3 +1,4 @@
+const BASE_URL_API = "https://swapi.dev/api"
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -37,6 +38,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			getInfoCharacters: async () => {
+				let response = await fetch (`${BASE_URL_API}/people`);
+				if (response.ok){
+					let body= await response.json()
+					setStore({infoCharacters:body.results})
+				}
 			}
 		}
 	};
