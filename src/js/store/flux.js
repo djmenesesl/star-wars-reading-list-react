@@ -45,6 +45,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let body= await response.json()
 					setStore({infoCharacters:body.results})
 				}
+			},
+			getInfoPlanets: async () => {
+				let response = await fetch (`${BASE_URL_API}/planets`);
+				if (response.ok){
+					let body= await response.json()
+					setStore({infoPlanets:body.results})
+				}
 			}
 		}
 	};
