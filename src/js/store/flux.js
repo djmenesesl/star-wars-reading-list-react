@@ -13,7 +13,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			favorites: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -52,6 +53,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let body= await response.json()
 					setStore({infoPlanets:body.results})
 				}
+			},
+			addFavorite:(favName, url)=>{
+				let store = getStore()
+				let favs = [...store.favorites,{name:favName,url:url}]
+				setStore({favorites:favs})
+			},
+			removeFavorite:(position)=>{
+				let store = getStore()
+				const favs = store.favorites.filter((favorite, index)=>index!==position)
+				setStore({favorites:favs})
 			}
 		}
 	};

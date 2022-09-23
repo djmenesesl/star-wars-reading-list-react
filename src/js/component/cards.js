@@ -9,8 +9,7 @@ export const Cards = (props) => {
                 <p className="card-text">Population: {props.item.population}</p>
                 <p className="card-text">Terrain: {props.item.terrain}</p>
                 <a href="#" className="btn btn-primary">Learn more!</a>
-                <button type="button" class="btn btn-outline-warning">&hearts;</button>
-                
+                <button type="button" className="btn btn-outline-warning">&hearts;</button>           
             </div>
         </div>
     )

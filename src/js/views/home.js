@@ -23,7 +23,7 @@ export const Home = () => {
 			</h1>
 			<div className="d-flex flex-row flex-nowrap overflow-auto">
 				{store.infoPlanets && store.infoPlanets.map((planets, index)=> {
-					return <Cards key={index} item = {planets} endpoint = "planets"/>
+					return <Card key={index} item = {planets} endpoint = "planets"/>
 				})}
 			</div>
 		</div>
