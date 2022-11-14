@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { Card } from "../component/card";
-import { Cards } from "../component/cards";
+
 import { Context } from "../store/appContext";
 
 export const Home = () => {
