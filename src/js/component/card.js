@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
+
+import { Link } from "react-router-dom";
 export const Card = (props) => {
-    const {store, actions} = useContext(Context)
+    const {store, actions} = useContext(Context);
+    
     return (
         <div className="card p-2" style={{minWidth: "300px"}}>
             <img src="https://picsum.photos/400/200" className="card-img-top" alt="..."/>
@@ -12,7 +15,7 @@ export const Card = (props) => {
                 <p className="card-text">{`${props.endpoint==="people"?`Hair Color: ${props.item.hair_color}`:props.endpoint==="planets"?`Climate: ${props.item.climate}`:"" }`}</p>
                 <p className="card-text">{`${props.endpoint==="people"?`Eye Color: ${props.item.eye_color}`:props.endpoint==="planets"?`Terrain: ${props.item.terrain}`:"" }`}</p>
                 <div className="d-flex justify-content-between">
-                    <a href="#" className="btn btn-primary">Learn more!</a>
+                    {props.endpoint==="people" ? (<Link to={`characterinfo/${props.uid}`} className="btn btn-primary">Learn more!</Link>) : (<Link to={`planetinfo/${props.uid}`} className="btn btn-primary">Learn more!</Link>)}
                     <button type="button"  onClick={()=>{
                         let url = `/${props.item.url.replace("https://swapi.dev/api/","")}`
                         if(store && store.favorites.find((favorite, index)=>{return favorite.url===url})){
@@ -31,5 +34,8 @@ export const Card = (props) => {
 }
 Card.prototype= {
     item:PropTypes.object,
-    endpoint:PropTypes.string
+    endpoint:PropTypes.string,
+    uid: PropTypes.string,
+    
+    
 }
