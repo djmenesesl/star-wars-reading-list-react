@@ -8,7 +8,9 @@ export const Card = (props) => {
     
     return (
         <div className="card p-2" style={{minWidth: "300px"}}>
-            <img src="https://picsum.photos/400/200" className="card-img-top" alt="..."/>
+            {props.endpoint==="people" ? (<img src={`https://starwars-visualguide.com/assets/img/characters/${props.item.uid}.jpg`} className="card-img-top" alt="..."/>) : (<img src={`https://starwars-visualguide.com/assets/img/planets/${props.item.uid}.jpg`} className="card-img-top" alt="..."/>)}
+            
+            
             <div className="card-body">
                 <h5 className="card-title">{props.item.name}</h5>
                              

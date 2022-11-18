@@ -24,7 +24,7 @@ export const PlanetInfo = ()=> {
     return (
         <div>
             <div className="d-flex">
-                <img src="https://picsum.photos/500/300" className="m-4"
+                <img src={`https://starwars-visualguide.com/assets/img/planets/${params.id}.jpg`} className="m-4"
                 alt="..." />
                 <div className="mx-4 justify-content-center">
                     <h1 className="text-primary my-3">{planet.name}</h1>
