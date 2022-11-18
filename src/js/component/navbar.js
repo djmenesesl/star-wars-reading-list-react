@@ -8,7 +8,7 @@ export const Navbar = () => {
 		
 	<nav className="navbar navbar-light bg-light mb-3">
 		<Link to="/">
-			<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+		<img className="ms-5 brand" style={{width: 50, height: 50}} src="https://i.pinimg.com/originals/88/d6/12/88d6120b4fba53792b41b02010dde964.jpg" alt="logo-starwars"></img>
 		</Link>
 		<div className="ml-auto">
 			<div className="dropdown">
